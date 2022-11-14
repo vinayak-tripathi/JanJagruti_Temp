@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'schemes',
     'crispy_forms',
+    'editor',
+    # 'ratings'
     # 'taggit'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -124,3 +126,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = 'editor/home'

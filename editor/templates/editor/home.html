@@ -1,0 +1,8 @@
+{% extends "schemes/base.html" %}
+{% block content %}
+    <div class="content-section">
+        This is the Editor main page
+        <a href="{% url 'logout' %}">Log Out</a>
+        <a href="{% url 'addscheme' %}">Add Schemes</a>
+    </div>
+{% endblock content %}

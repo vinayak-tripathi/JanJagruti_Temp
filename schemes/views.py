@@ -39,7 +39,7 @@ class SchemeListView(ListView):
     def get_queryset(self):
         # user = get_object_or_404(User, username=self.kwargs.get('username'))
         search_input = self.request.GET.get('search-area') or ''
-        return Schemes.objects.filter(details__icontains=search_input).order_by('-uploadDate')
+        return Schemes.objects.filter(Q(details__icontains=search_input)|Q(eligibility__icontains=search_input)|Q(nodalMinistry__icontains=search_input)).order_by('-uploadDate')
 
 class SchemeDetailView(DetailView):
     model = Schemes
@@ -49,22 +49,9 @@ class SchemeDetailView(DetailView):
     #     context["title"] = context['schemes'].objects
     #     print(context['schemes'])
     #     return context
-class DateInput(forms.DateInput):
-    input_type = 'date'
 
-class SchemeAdd(CreateView):
-    model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
-    # success_url = reverse_lazy('tasks')
-    success_url = reverse_lazy('schemes')
-    def get_form(self,form_class=None):
-        form = super(SchemeAdd,self).get_form(form_class)
-        form.fields['openDate'].widget = DateInput()
-        form.fields['closeDate'].widget = DateInput()
-        return form
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(SchemeAdd,self).form_valid(form)
+
+
 
 # class CategoryListView(ListView,slug):
 #     tag = get_object_or_404(Tags,slug=slug)
@@ -114,7 +101,5 @@ class TaggedView(ListView):
         print(posts)
         return posts
 
-class SchemeUpdate(UpdateView):
-    model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
-
+def userForm(request):
+    return render(request, 'schemes/secondForm.html')
