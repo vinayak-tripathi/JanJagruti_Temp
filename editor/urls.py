@@ -6,7 +6,7 @@ from .views import (
     SchemeUpdate,
     SchemeUpdateListView)
 urlpatterns = [
-    path('editor/home',home,name="editor"),
+    path('editor/',home,name="editor"),
     path('editor/login/', auth_views.LoginView.as_view(template_name='editor/login.html'), name='login'),
     path('editor/logout/', auth_views.LogoutView.as_view(template_name='editor/logout.html'), name='logout'),
     path('editor/logout/', auth_views.LogoutView.as_view(template_name='editor/logout.html'), name='logout'),

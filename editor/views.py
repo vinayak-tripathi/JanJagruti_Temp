@@ -3,6 +3,7 @@ from schemes.models import Schemes,Tags, Category
 from django.db.models import Q
 from django.urls import reverse_lazy
 # Create your views here.
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -10,15 +11,17 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django import forms
 
+@login_required
 def home(request):
     # context = {
     #     'posts': Schemes.objects.all()
     # }
     return render(request, 'editor/home.html')
 
-class SchemeUpdateListView(ListView):
+class SchemeUpdateListView(LoginRequiredMixin,ListView):
     model = Schemes
     template_name = 'editor/update_scheme.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'schemes'
@@ -41,11 +44,11 @@ class SchemeUpdateListView(ListView):
 class DateInput(forms.DateInput):
     input_type = 'date'
 
-class SchemeUpdate(UpdateView):
+class SchemeUpdate(LoginRequiredMixin,UpdateView):
     model = Schemes
     fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
 
-class SchemeAdd(CreateView):
+class SchemeAdd(LoginRequiredMixin,CreateView):
     model = Schemes
     fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
     # success_url = reverse_lazy('tasks')
