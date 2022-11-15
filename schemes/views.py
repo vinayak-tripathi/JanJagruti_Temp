@@ -43,6 +43,22 @@ class SchemeListView(ListView):
 
 class SchemeDetailView(DetailView):
     model = Schemes
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context['object'],'Hello')
+        # context["title"] = context['schemes'].objects
+        fields = {
+            'title' : 'Title',
+            'details' : 'Details',
+             'eligibility': 'Eligibility',
+             'sources' : 'References',
+             'validity' : 'Validty'
+
+        }
+        # ['title','name','brief','eligibility','references','slug','tags','details']
+        context['fields']=fields
+        return context
+    # model = Schemes
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
     #     print(context)
@@ -117,4 +133,7 @@ class TaggedView(ListView):
 class SchemeUpdate(UpdateView):
     model = Schemes
     fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
+
+class AboutView(DetailView):
+    template_name = 'schemes/about.html'
 

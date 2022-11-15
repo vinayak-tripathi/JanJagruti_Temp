@@ -54,13 +54,11 @@
       data-n-g=""
     />
     <style>
-      .form-control{
+      .form-control {
         border-radius: 0.5rem;
       }
-      .form-group{
-        
+      .form-group {
       }
-
     </style>
     {% if title %}
     <title>{{ title }}</title>
@@ -138,7 +136,6 @@
                     class="undefined px-2 border-0 border-l border-solid border-gray-100 block relative h-6 w-36 lg:h-8 lg:w-48 normal-case"
                     href="/"
                   >
-                    {% comment %}
                     <span
                       style="
                         box-sizing: border-box;
@@ -165,11 +162,15 @@
                       0; border: none; margin: auto; height: 100px; width:
                       100px; " class="border-0 mx-auto" loading="lazy" />
                     </span>
-                    {% endcomment %}
-                    {% comment %} <span><h2 class="text-4xl text-green-600 font-bold font-heading mb-6">
-                      Jan<span class="text-blue">Jagruti</span>
-                    </h2></span> {% endcomment %}
-                    JanJagruti
+                    {% comment %}
+                    <span
+                      ><h2
+                        class="text-4xl text-green-600 font-bold font-heading mb-6"
+                      >
+                        Jan<span class="text-blue">Jagruti</span>
+                      </h2></span
+                    >
+                    {% endcomment %} JanJagruti
                   </a>
                 </h1>
               </div>
@@ -456,185 +457,147 @@
       </nav>
     </header>
     <main role="main">
-      
       <div class="row justify-content-md-center">
-        
         <div>
-          <div class="py-2 mt-20 bg-green-50 mb-8"><div class="container px-4 lg:px-0 mx-auto  "></div></div>
+          <div class="py-2 mt-20 bg-green-50 mb-8">
+            <div class="container px-4 lg:px-0 mx-auto"></div>
+          </div>
           {% if messages %} {% for message in messages %}
           <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-          {% endfor %} {% endif %}
-           {% block content %}{% endblock %}
+          {% endfor %} {% endif %} {% block content %}{% endblock %}
         </div>
       </div>
     </main>
-<footer>
-    <section
-      id="contact"
-      class="bg-darkIndigo-900 relative z-0 after:absolute after:-top-3 lg:after:-top-6 after:-left-1 after:w-full after:h-0 after:border-darkIndigo-900 after:border-[50px] after:border-solid after:-z-10 after:rotate-[3deg] lg:after:rotate-[2deg] after:transform mt-20"
-    >
-      <div
-        class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative z-0"
+    <footer>
+      <section
+        id="contact"
+        class="bg-darkIndigo-900 relative z-0 after:absolute after:-top-3 lg:after:-top-6 after:-left-1 after:w-full after:h-0 after:border-darkIndigo-900 after:border-[50px] after:border-solid after:-z-10 after:rotate-[3deg] lg:after:rotate-[2deg] after:transform mt-20"
       >
         <div
-          class="gap-4 grid grid-cols-1 py-12 !items-start !gap-8 md:grid-cols-2 lg:grid-cols-4 undefined"
+          class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative z-0"
         >
-          <div class="flex-1">
-            <h2 class="text-4xl text-green-600 font-bold font-heading mb-6">
-              Jan<span class="text-white">Jagruti</span>
-            </h2>
-            <p class="text-white text-white/80 hover:text-white">
-              <span
-                >©
-                <!-- -->2022 </span
-              ><a class="undefined text-white normal-case" href="/">
-                <!-- -->JanJagruti
-                <!-- -->.
-                <!-- -->
-              </a>
-            </p>
-            
-          </div>
-          <div class="flex-1">
-            <h2 class="text-white text-2xl font-heading font-semibold mb-6">
-              Quick Links
-            </h2>
-            <ul class="grid grid-cols-1 text-white items-center !gap-4 gap-2">
-              <li
-                title="List Item"
-                class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
+          <div
+            class="gap-4 grid grid-cols-1 py-12 !items-start !gap-8 md:grid-cols-2 lg:grid-cols-4 undefined"
+          >
+            <div class="flex-1">
+              <h2 class="text-4xl text-green-600 font-bold font-heading mb-6">
+                Jan<span class="text-white">Jagruti</span>
+              </h2>
+              <p class="text-white text-white/80 hover:text-white">
+                <span
+                  >©
+                  <!-- -->2022 </span
+                ><a class="undefined text-white normal-case" href="/">
+                  <!-- -->JanJagruti
+                  <!-- -->.
+                  <!-- -->
+                </a>
+              </p>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-white text-2xl font-heading font-semibold mb-6">
+                Quick Links
+              </h2>
+              <ul class="grid grid-cols-1 text-white items-center !gap-4 gap-2">
+                <li
+                  title="List Item"
+                  class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+                    ></path></svg
+                  ><a class="undefined block normal-case" href="/about"
+                    >About Us</a
+                  >
+                </li>
+                <li
+                  title="List Item"
+                  class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+                    ></path></svg
+                  ><a class="undefined block normal-case" href="/contact"
+                    >Contact Us</a
+                  >
+                </li>
+                <li
+                  title="List Item"
+                  class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+                    ></path></svg
+                  ><a class="undefined block normal-case" href="/faqs"
+                    >Frequently Asked Questions</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-white text-2xl font-heading font-semibold mb-6">
+                Useful Links
+              </h2>
+              <ul
+                class="grid grid-cols-1 text-white items-center !grid !grid-cols-3 !gap-1 gap-2"
               >
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="18"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
                 >
-                  <path
-                    d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
-                  ></path></svg
-                ><a class="undefined block normal-case" href="/about"
-                  >About Us</a
-                >
-              </li>
-              <li
-                title="List Item"
-                class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
-              >
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="18"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
-                  ></path></svg
-                ><a class="undefined block normal-case" href="/contact"
-                  >Contact Us</a
-                >
-              </li>
-              <li
-                title="List Item"
-                class="flex hover:pl-1 duration-500 gap-2 opacity-80 hover:opacity-100 transition-all ease-in-out text-sm"
-              >
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="18"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
-                  ></path></svg
-                ><a class="undefined block normal-case" href="/faqs"
-                  >Frequently Asked Questions</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <h2 class="text-white text-2xl font-heading font-semibold mb-6">
-              Useful Links
-            </h2>
-            <ul
-              class="grid grid-cols-1 text-white items-center !grid !grid-cols-3 !gap-1 gap-2"
-            >
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="di"
-                      title="di"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="di"
                         title="di"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -653,78 +616,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="digilocker"
-                      title="digilocker"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="di"
+                          title="di"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdi.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="digilocker"
                         title="digilocker"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -743,78 +706,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="umang"
-                      title="umang"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="digilocker"
+                          title="digilocker"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fdigilocker.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="umang"
                         title="umang"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -833,78 +796,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="indiaGov"
-                      title="indiaGov"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="umang"
+                          title="umang"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Fumang.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="indiaGov"
                         title="indiaGov"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -923,78 +886,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="myGov"
-                      title="myGov"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="indiaGov"
+                          title="indiaGov"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FindiaGov.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="myGov"
                         title="myGov"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -1013,78 +976,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="dataGov"
-                      title="dataGov"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="myGov"
+                          title="myGov"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FmyGov.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="dataGov"
                         title="dataGov"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -1103,78 +1066,78 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-              <li
-                title="List Item"
-                class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
-              >
-                <div class="relative w-full h-10">
-                  <span
-                    style="
-                      box-sizing: border-box;
-                      display: block;
-                      overflow: hidden;
-                      width: initial;
-                      height: initial;
-                      background: none;
-                      opacity: 1;
-                      border: 0;
-                      margin: 0;
-                      padding: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      bottom: 0;
-                      right: 0;
-                    "
-                    ><img
-                      alt="igod"
-                      title="igod"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      decoding="async"
-                      data-nimg="fill"
-                      class="border-0"
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="dataGov"
+                          title="dataGov"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2FdataGov.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+                <li
+                  title="List Item"
+                  class="bg-white p-1 rounded-md duration-500 border-3 border-solid border-darkIndigo-900 hover:border-green-600 transition-all ease-in-out text-sm cursor-pointer"
+                >
+                  <div class="relative w-full h-10">
+                    <span
                       style="
+                        box-sizing: border-box;
+                        display: block;
+                        overflow: hidden;
+                        width: initial;
+                        height: initial;
+                        background: none;
+                        opacity: 1;
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
                         position: absolute;
                         top: 0;
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        box-sizing: border-box;
-                        padding: 0;
-                        border: none;
-                        margin: auto;
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        min-height: 100%;
-                        max-height: 100%;
-                        object-fit: contain;
-                      " /><noscript
+                      "
                       ><img
-                        srcset="
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=640&amp;q=75   640w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=750&amp;q=75   750w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=828&amp;q=75   828w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1080&amp;q=75 1080w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1200&amp;q=75 1200w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1920&amp;q=75 1920w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=2048&amp;q=75 2048w,
-                          /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=3840&amp;q=75 3840w
-                        "
                         alt="igod"
                         title="igod"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=3840&amp;q=75"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         decoding="async"
                         data-nimg="fill"
+                        class="border-0"
                         style="
                           position: absolute;
                           top: 0;
@@ -1193,40 +1156,84 @@
                           min-height: 100%;
                           max-height: 100%;
                           object-fit: contain;
-                        "
-                        class="border-0"
-                        loading="lazy" /></noscript
-                  ></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <h2 class="text-white text-2xl font-heading font-semibold mb-6">
-              Address
-            </h2>
-            <p
-              class="text-white text-sm leading-relaxed flex gap-1 items-start opacity-80"
-            >
-              <span
-                >Sardar Patel Institute of Technology, Bhavans Campus, Munshi Nagar, Andheri West, Maharashtra - 400058, India</span
+                        " /><noscript
+                        ><img
+                          srcset="
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=640&amp;q=75   640w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=750&amp;q=75   750w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=828&amp;q=75   828w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1080&amp;q=75 1080w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1200&amp;q=75 1200w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=1920&amp;q=75 1920w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=2048&amp;q=75 2048w,
+                            /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=3840&amp;q=75 3840w
+                          "
+                          alt="igod"
+                          title="igod"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2FusefulLinks%2Figod.png&amp;w=3840&amp;q=75"
+                          decoding="async"
+                          data-nimg="fill"
+                          style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            box-sizing: border-box;
+                            padding: 0;
+                            border: none;
+                            margin: auto;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            min-width: 100%;
+                            max-width: 100%;
+                            min-height: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                          "
+                          class="border-0"
+                          loading="lazy" /></noscript
+                    ></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-white text-2xl font-heading font-semibold mb-6">
+                Address
+              </h2>
+              <p
+                class="text-white text-sm leading-relaxed flex gap-1 items-start opacity-80"
               >
-            </p>
-            <div class="mb-4">
-              <p class="text-green-600 underline text-sm font-normal mb-0">
-                {% comment %} support-myscheme[at]digitalindia[dot]gov[dot]in {% endcomment %}
+                <span
+                  >Sardar Patel Institute of Technology, Bhavans Campus, Munshi
+                  Nagar, Andheri West, Maharashtra - 400058, India</span
+                >
               </p>
-              {% comment %} <p class="text-white text-sm font-normal my-4">(011) 24303714</p> {% endcomment %}
+              <div class="mb-4">
+                <p class="text-green-600 underline text-sm font-normal mb-0">
+                  {% comment %} support-myscheme[at]digitalindia[dot]gov[dot]in
+                  {% endcomment %}
+                </p>
+                {% comment %}
+                <p class="text-white text-sm font-normal my-4">
+                  (011) 24303714
+                </p>
+                {% endcomment %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-</footer>
-    {% comment %} <footer
+      </section>
+    </footer>
+    {% comment %}
+    <footer
       class="relative bg-darkIndigo-900 py-2 border border-t border-solid border-darkIndigo-800"
-    > {% endcomment %}
-      {% comment %} <div class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative">
+    >
+      {% endcomment %} {% comment %}
+      <div class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative">
         <div
           class="text-sm text-white/50 text-left font-normal py-1 md:flex items-start justify-between gap-2"
         >
@@ -1235,8 +1242,10 @@
           : 09/11/2022 | v-
           <!-- -->1.1.46
         </div>
-      </div> {% endcomment %}
-    {% comment %} </footer> {% endcomment %}
+      </div>
+      {% endcomment %} {% comment %}
+    </footer>
+    {% endcomment %}
   </body>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

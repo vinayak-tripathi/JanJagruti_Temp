@@ -7,12 +7,18 @@ from .views import (
     # tagged
     CategoryView,
     TaggedView,
-    SchemeUpdate
+    SchemeUpdate,
+    AboutView
+    
 )
+from whatsapp import views    # ← new import
+
 # from . import views
 urlpatterns = [
     path('', home, name='home'),
     path('schemes/', SchemeListView.as_view(), name='schemes'),
+    path('message', views.message),    # ← new item
+    path('about',AboutView.as_view(),name = 'about'),
     path('schemes/<slug:slug>/',SchemeDetailView.as_view(), name='schemedetail'),
     path('addscheme/',SchemeAdd.as_view(),name = 'addscheme'),
     path('category/<slug:slug>',CategoryView.as_view(),name='category'),
