@@ -185,29 +185,18 @@
           <div class="absolute opacity-70 -top-10 -right-5 lg:-right-10 w-36 h-40 -z-10 bg-repeat categories-bg-2">
           </div>
           <div class="bg-white grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-10 gap-y-6 p-4 relative">
-            <!-- <div class="absolute -bottom-10 -right-5 lg:-right-10 -z-10 opacity-50"><span
-                style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                  style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                    alt="" aria-hidden="true"
-                    src="./images/agri_and_rural.jpg"
-                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                  alt="bg-shape" title="bg-shape"
-                  src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=256&amp;q=75"
-                  decoding="async" data-nimg="intrinsic" class="border-0 "
-                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                  srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=128&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=256&amp;q=75 2x"><noscript></noscript></span>
-            </div> -->
+           {% for category in categories%}
             <div class="group cursor-pointer">
                 <a class="nav-item nav-link" 
                 {% comment %} href="?search-area={{search_input}}&page={{ page_obj.next_page_number }}" {% endcomment %}
-                href="{% url 'tagged' 'agriculture' %}"
+                href="{% url 'tagged' category.tagUrl %}"
                 >
               <div
                 class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
                 <span
                   style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
                     style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
+                      alt="" aria-hidden="true" src={{category.url}}
                       style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;border-radius: 50%;">
                   </span>
                   <!-- <img
@@ -218,14 +207,15 @@
                     srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&amp;w=96&amp;q=75 2x"><noscript></noscript></span>
               -->
               </div>
+              
               <p
                 class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
                 10 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Agriculture,Rural &amp;
-                Environment</p>
+              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">{{category.title}}</p>
             </a>
             </div>
-            <div class="group cursor-pointer">
+           {% endfor%}
+           {% comment %}   <div class="group cursor-pointer">
               <div
                 class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
                 <span
@@ -525,7 +515,7 @@
                 class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
                 15 Schemes</p>
               <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Utility &amp; Sanitation</p>
-            </div>
+            </div> {% endcomment %}
           </div>
         </div>
       </div>

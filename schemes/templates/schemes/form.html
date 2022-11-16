@@ -29,15 +29,15 @@
               class="pt-4 pb-4 md:flex flex-col px-6 md:px-16 max-w-lg mx-auto justify-center gap-2"
             >
               <!-- <div
-                                    class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center relative mb-10 ">
-                                    <button aria-label="Muted Button" class=" flex items-center px-3 py-1.5 text-xs font-medium  rounded-md   undefined undefined border-0 bg-transparent !p-0  text-gray-500 hover:text-gray-700   transition ease-in-out font-medium leading-none  !hidden absolute left-0 -top-8 md:top-auto !text-sm 
-                       undefined " title=""><svg stroke="currentColor" fill="none" stroke-width="0"
-                                            viewBox="0 0 24 24" class="mr-2 inline-block  !mr-1 w-5 h-5"
-                                            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
-                                        </svg>Back</button>
-                                </div> -->
+                                  class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center relative mb-10 ">
+                                  <button aria-label="Muted Button" class=" flex items-center px-3 py-1.5 text-xs font-medium  rounded-md   undefined undefined border-0 bg-transparent !p-0  text-gray-500 hover:text-gray-700   transition ease-in-out font-medium leading-none  !hidden absolute left-0 -top-8 md:top-auto !text-sm 
+                     undefined " title=""><svg stroke="currentColor" fill="none" stroke-width="0"
+                                          viewBox="0 0 24 24" class="mr-2 inline-block  !mr-1 w-5 h-5"
+                                          height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                                      </svg>Back</button>
+                              </div> -->
               <!-- <form class="flex flex-col gap-6 min-h-[24rem] md:min-h-[20rem] mb-8 md:mb-0"> -->
               <div>
                 <h2
@@ -255,7 +255,28 @@
                   </h2>
                 </div>
               </div>
-
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>What is
+                  your marital status?
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <select
+                    class="border border-solid border-gray-300 font-semibold rounded-md w-full focus:ring-green-600 focus:outline-0"
+                  >
+                    <option value="">-- Select One --</option>
+                    <option value="Married">Married</option>
+                    <option value="Never Married">Never Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Widowed">Widowed</option>
+                  </select>
+                </div>
+              </div>
               <div>
                 <h2
                   class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
@@ -756,8 +777,8 @@
                       </select>
                     </div>
                     <!-- <h2
-                                                class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 flex-none">
-                                                years</h2> -->
+                                              class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 flex-none">
+                                              years</h2> -->
                   </div>
                 </div>
               </div>
@@ -808,6 +829,72 @@
                       >
                         <div class="flex flex-row items-center justify-between">
                           No
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>What is
+                  your current employment status?
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerEmployed_employmentStatus"
+                        name="employmentStatus"
+                        value="Employed"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerEmployed_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Employed
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerUnemployed_employmentStatus"
+                        name="employmentStatus"
+                        value="Unemployed"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerUnemployed_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Unemployed
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerSelf-Employed/ Entrepreneur_employmentStatus"
+                        name="employmentStatus"
+                        value="Self-Employed/ Entrepreneur"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerSelf-Employed/ Entrepreneur_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Self-Employed/ Entrepreneur
                         </div>
                       </label>
                     </div>
@@ -871,6 +958,23 @@
                 <h2
                   class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
                 >
+                  What is your family's annual income?
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-1 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <input
+                    type="number"
+                    class="border border-solid border-gray-300 font-semibold px-4 py-1.5 rounded focus:outline-0"
+                    placeholder="Enter here"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
                   <span class="text-red-500 text-smundefined">*</span>Are you in
                   any of the following condition - Destitute /Penury /Extreme
                   Hardship /Distress
@@ -927,8 +1031,8 @@
       </div>
     </div>
     <!-- <div class="mt-3">
-                    <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
-                </div> -->
+                  <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+              </div> -->
     <!-- </section> -->
   </form>
 </div>

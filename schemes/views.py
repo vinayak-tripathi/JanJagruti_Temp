@@ -19,7 +19,59 @@ def home(request):
     # context = {
     #     'posts': Schemes.objects.all()
     # }
-    return render(request, 'schemes/home.html')
+    category =[
+   {
+      "title": "Agriculture,Rural & Environment",
+      "tagUrl": "agriculture",
+      "url" : "https://www.myscheme.gov.in/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&w=48&q=75"
+   },
+   {
+      "title": "Banking,Financial Services and Insurance",
+      "tagUrl": "banking",
+      "url" : "https://cdn.myscheme.in/images/categories/Public%20Safety,Law%20&%20Justice.png"
+   },
+   {
+      "title":"Business & Entrepreneurship",
+      "tagUrl": "business",
+      "url": "https://cdn.myscheme.in/images/categories/Business%20&%20Entrepreneurship.png"
+   },
+     {
+      "title":"Education & Learning",
+      "tagUrl": "education",
+      "url": "https://cdn.myscheme.in/images/categories/Education%20&%20Learning.png"
+   },
+     {
+      "title":"Health & Wellness",
+      "tagUrl": "health",
+      "url": "https://cdn.myscheme.in/images/categories/Health%20&%20Wellness.png"
+   },
+     {
+      "title":"Public Safety,Law & Justice",
+      "tagUrl": "justice",
+      "url": "https://cdn.myscheme.in/images/categories/Public%20Safety,Law%20&%20Justice.png"
+   },
+   {
+      "title":"Science, IT & Communications",
+      "tagUrl": "technical-course",
+      "url": "https://cdn.myscheme.in/images/categories/Science,%20IT%20&%20Communications.png"
+   },
+   {
+      "title":"Skills & Employment",
+      "tagUrl": "employment",
+      "url": "https://cdn.myscheme.in/images/categories/Skills%20&%20Employment.png"
+   },
+   {
+      "title":"Housing & Shelter",
+      "tagUrl": "shelter",
+      "url": "https://cdn.myscheme.in/images/categories/Housing%20&%20Shelter.png"
+   }
+   
+]
+
+    context = {
+        'categories' : category,
+    }
+    return render(request, 'schemes/home.html',context)
 
 class SchemeListView(ListView):
     model = Schemes
