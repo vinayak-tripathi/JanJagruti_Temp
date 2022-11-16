@@ -18,7 +18,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('schemes/', SchemeListView.as_view(), name='schemes'),
     path('message', views.message),    # ← new item
-    path('about',AboutView.as_view(),name = 'about'),
+    path('about',AboutView.as_view(),name = 'about'), # for about page
     path('schemes/<slug:slug>/',SchemeDetailView.as_view(), name='schemedetail'),
     path('addscheme/',SchemeAdd.as_view(),name = 'addscheme'),
     path('category/<slug:slug>',CategoryView.as_view(),name='category'),
