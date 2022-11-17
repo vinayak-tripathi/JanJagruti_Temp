@@ -27,7 +27,7 @@ def home(request):
    },
    {
       "title": "Banking,Financial Services and Insurance",
-      "tagUrl": "banking",
+      "tagUrl": "insurance",
       "url" : "https://cdn.myscheme.in/images/categories/Public%20Safety,Law%20&%20Justice.png"
    },
    {

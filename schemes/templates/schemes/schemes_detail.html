@@ -84,12 +84,12 @@
                                                         </path>
                                                     </svg>
                                                 </div> {% endcomment %}
-                                                <div class="pr-2 pb-4 h-full">
+                                                {% comment %} <div class="pr-2 pb-4 h-full">
                                                     <h2 class="font-bold text-lg sm:text-xl text-green-500 text-center mt-2"
                                                         title={{ object.name
-                                                        }}>{{ object.name
+                                                        }}>{{object.name
                                                         }}</h2><iframe height="95%" width="100%" src=""></iframe>
-                                                </div>
+                                                </div> {% endcomment %}
                                             </div>
                                         </div>
                                     </div>
@@ -98,12 +98,11 @@
                                         <div
                                             class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center  p-3 md:px-6 pt-6 pb-0 !items-start relative">
                                             <div class="w-full  border-0 border-b border-solid border-gray-100 pb-4 ">
-                                                <div class="w-full flex flex-row justify-between items-start mb-5">
+                                                <div class="w-full flex flex-row justify-between items-start mb-3">
                                                     <div class="flex-1">
                                                         <h2 class="text-darkIndigo-900 text-sm">{{object.nodalMinistry}}</h2>
                                                         <h1 class="font-bold text-green-600 text-xl sm:text-2xl mt-1"
-                                                            title={{ object.name
-                                                            }}>{{ object.name}}</h1>
+                                                           style='text-align: start'>{{ object.name}}</h1>
                                                     </div>
                                                     {% comment %} <div
                                                         class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center hidden !gap-1">
