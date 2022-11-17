@@ -19,9 +19,9 @@ h2 {
 }
 .button {
   padding: 0.7rem 1.5rem;
-  border: 1px solid #0d9d38;
-  background-color: #0d9d38;
-  color: rgb(0, 0, 0);
+  border: 1px solid #43ee76;
+  background-color: #43ee60;
+  color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }

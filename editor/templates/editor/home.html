@@ -1,5 +1,12 @@
 {% extends "schemes/base.html" %}
 {% block content %}
+    {% if request.user.is_authenticated %}
+    <div>
+        <h1>Hello {{request.user|title}}</h1>
+        <h3 style="margin:0">You are admin</h3>
+    </div>
+    <a href="{% url 'logout'%}">Logout</a>
+    {% endif %}
     <div class="content-section">
         This is the Editor main page
         <a href="{% url 'logout' %}">Log Out</a>

@@ -4,9 +4,6 @@ from django.db.models import Q
 from django.views.generic import (
     ListView,
     DetailView,
-    CreateView,
-    UpdateView,
-    DeleteView
 )
 
 from .models import Schemes,Tags, Category
@@ -16,10 +13,10 @@ from django import forms
 # from taggit.models import Tags,Category,SubCategory
 
 def home(request):
-    # context = {
-    #     'posts': Schemes.objects.all()
-    # }
-    return render(request, 'schemes/home.html')
+    context = {
+        'categories': Category.objects.all()
+    }
+    return render(request, 'schemes/home.html',context)
 
 class SchemeListView(ListView):
     model = Schemes
@@ -43,6 +40,21 @@ class SchemeListView(ListView):
 
 class SchemeDetailView(DetailView):
     model = Schemes
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context['object'],'Hello')
+        # context["title"] = context['schemes'].objects
+        fields = {
+            'title' : 'Title',
+            'details' : 'Details',
+             'eligibility': 'Eligibility',
+             'sources' : 'References',
+             'validity' : 'Validty'
+
+        }
+        # ['title','name','brief','eligibility','references','slug','tags','details']
+        context['fields']=fields
+        return context
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
     #     print(context)
@@ -100,6 +112,9 @@ class TaggedView(ListView):
         posts = Schemes.objects.filter(tags=self.tag)
         print(posts)
         return posts
+
+def about(request):
+    return render(request,"schemes/about.html")
 
 def userForm(request):
     return render(request, 'schemes/secondForm.html')

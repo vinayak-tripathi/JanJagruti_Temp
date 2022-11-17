@@ -1,0 +1,1039 @@
+{% extends "schemes/base.html" %} {% block content %}
+<div>
+  <!-- <div id="multi-step-form-container"> -->
+  <!-- Form Steps / Progress Bar -->
+
+  <!-- Step Wise Form Content -->
+  <form
+    id="userAccountSetupForm"
+    name="userAccountSetupForm"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    <!-- Step 1 Content -->
+    <!-- <section id="step-1" class="form-step"> -->
+    <div
+      class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative py-0"
+    >
+      <div
+        class="grid grid-cols-1 md:flex flex-wrap gap-8 justify-between items-center !justify-center !items-start"
+      >
+        <div class="flex-col md:w-10/12 lg:w-7/12 my-10">
+          <h2 class="text-2xl text-center font-semibold mb-6 pl-2">
+            Help us find the best schemes for you
+          </h2>
+          <div
+            class="flex-col relative pt-8 bg-white rounded-3xl shadow-xl min-h-[620px] md:min-h-[550px]"
+          >
+            <div
+              class="pt-4 pb-4 md:flex flex-col px-6 md:px-16 max-w-lg mx-auto justify-center gap-2"
+            >
+              <!-- <div
+                                  class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center relative mb-10 ">
+                                  <button aria-label="Muted Button" class=" flex items-center px-3 py-1.5 text-xs font-medium  rounded-md   undefined undefined border-0 bg-transparent !p-0  text-gray-500 hover:text-gray-700   transition ease-in-out font-medium leading-none  !hidden absolute left-0 -top-8 md:top-auto !text-sm 
+                     undefined " title=""><svg stroke="currentColor" fill="none" stroke-width="0"
+                                          viewBox="0 0 24 24" class="mr-2 inline-block  !mr-1 w-5 h-5"
+                                          height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                                      </svg>Back</button>
+                              </div> -->
+              <!-- <form class="flex flex-col gap-6 min-h-[24rem] md:min-h-[20rem] mb-8 md:mb-0"> -->
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Tell us
+                  about yourself, you are a...
+                </h2>
+                <div class="md:flex flex-row flex-nowrap gap-4">
+                  <div class="md:w-1/3 mb-4 md:mb-0">
+                    <div class="cursor-pointer w-full my-1">
+                      <div class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          id="answerMale"
+                          name="gender"
+                          value="Male"
+                        /><label
+                          class="cursor-pointer md:text-center px-1 py-2 rounded w-full h-full flex justify-start items-center md:block border-solid border border-gray-50 shadow bg-white hover:bg-gray-100 text-gray-700 peer-checked:shadow-lg peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600"
+                          for="answerMale"
+                        >
+                          <p
+                            class="font-heading font-medium tracking-wide text-center truncate mb-0 md:ml-0 px-2 md:px-1"
+                          >
+                            Male
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:w-1/3 mb-4 md:mb-0">
+                    <div class="cursor-pointer w-full my-1">
+                      <div class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          id="answerFemale"
+                          name="gender"
+                          value="Female"
+                          checked=""
+                        /><label
+                          class="cursor-pointer md:text-center px-1 py-2 rounded w-full h-full flex justify-start items-center md:block border-solid border border-gray-50 shadow bg-white hover:bg-gray-100 text-gray-700 peer-checked:shadow-lg peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600"
+                          for="answerFemale"
+                        >
+                          <p
+                            class="font-heading font-medium tracking-wide text-center truncate mb-0 md:ml-0 px-2 md:px-1"
+                          >
+                            Female
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="md:w-1/3 mb-4 md:mb-0">
+                    <div class="cursor-pointer w-full my-1">
+                      <div class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          id="answerTransgender"
+                          name="gender"
+                          value="Transgender"
+                        /><label
+                          class="cursor-pointer md:text-center px-1 py-2 rounded w-full h-full flex justify-start items-center md:block border-solid border border-gray-50 shadow bg-white hover:bg-gray-100 text-gray-700 peer-checked:shadow-lg peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600"
+                          for="answerTransgender"
+                        >
+                          <p
+                            class="font-heading font-medium tracking-wide text-center truncate mb-0 md:ml-0 px-2 md:px-1"
+                          >
+                            Transgender
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center gap-4 justify-between items-center !justify-start flex-wrap !gap-2"
+                >
+                  <h2
+                    class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 !whitespace-nowrap flex-none"
+                  >
+                    <span class="text-red-500 text-smundefined">*</span>and your
+                    age is
+                  </h2>
+                  <div class="flex-none">
+                    <select
+                      class="border border-solid border-gray-300 font-bold text-xl md:text-2xl rounded-md w-24 focus:ring-green-600 focus:outline-0"
+                    >
+                      <option value="">--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                      <option value="60">60</option>
+                      <option value="61">61</option>
+                      <option value="62">62</option>
+                      <option value="63">63</option>
+                      <option value="64">64</option>
+                      <option value="65">65</option>
+                      <option value="66">66</option>
+                      <option value="67">67</option>
+                      <option value="68">68</option>
+                      <option value="69">69</option>
+                      <option value="70">70</option>
+                      <option value="71">71</option>
+                      <option value="72">72</option>
+                      <option value="73">73</option>
+                      <option value="74">74</option>
+                      <option value="75">75</option>
+                      <option value="76">76</option>
+                      <option value="77">77</option>
+                      <option value="78">78</option>
+                      <option value="79">79</option>
+                      <option value="80">80</option>
+                      <option value="81">81</option>
+                      <option value="82">82</option>
+                      <option value="83">83</option>
+                      <option value="84">84</option>
+                      <option value="85">85</option>
+                      <option value="86">86</option>
+                      <option value="87">87</option>
+                      <option value="88">88</option>
+                      <option value="89">89</option>
+                      <option value="90">90</option>
+                      <option value="91">91</option>
+                      <option value="92">92</option>
+                      <option value="93">93</option>
+                      <option value="94">94</option>
+                      <option value="95">95</option>
+                      <option value="96">96</option>
+                      <option value="97">97</option>
+                      <option value="98">98</option>
+                      <option value="99">99</option>
+                      <option value="100">100</option>
+                      <option value="101">101</option>
+                      <option value="102">102</option>
+                      <option value="103">103</option>
+                      <option value="104">104</option>
+                      <option value="105">105</option>
+                      <option value="106">106</option>
+                      <option value="107">107</option>
+                      <option value="108">108</option>
+                      <option value="109">109</option>
+                      <option value="110">110</option>
+                      <option value="111">111</option>
+                      <option value="112">112</option>
+                      <option value="113">113</option>
+                      <option value="114">114</option>
+                      <option value="115">115</option>
+                    </select>
+                  </div>
+                  <h2
+                    class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 flex-none"
+                  >
+                    years
+                  </h2>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>What is
+                  your marital status?
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <select
+                    class="border border-solid border-gray-300 font-semibold rounded-md w-full focus:ring-green-600 focus:outline-0"
+                  >
+                    <option value="">-- Select One --</option>
+                    <option value="Married">Married</option>
+                    <option value="Never Married">Never Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Widowed">Widowed</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  Please select your state
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <select
+                    class="border border-solid border-gray-300 font-semibold rounded-md w-full focus:ring-green-600 focus:outline-0"
+                  >
+                    <option>--Select One--</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Ladakh">Ladakh</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Andaman and Nicobar Islands">
+                      Andaman and Nicobar Islands
+                    </option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option
+                      value="The Dadra And Nagar Haveli And Daman And Diu"
+                    >
+                      The Dadra And Nagar Haveli And Daman And Diu
+                    </option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Please
+                  select your area of residence
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-2 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerUrban_residence"
+                        name="residence"
+                        value="Urban"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerUrban_residence"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Urban
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerRural_residence"
+                        name="residence"
+                        value="Rural"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerRural_residence"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Rural
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>You belong
+                  to...
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerGeneral_caste"
+                        name="caste"
+                        value="General"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerGeneral_caste"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          General
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerOther Backward Class (OBC)_caste"
+                        name="caste"
+                        value="Other Backward Class (OBC)"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerOther Backward Class (OBC)_caste"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Other Backward Class (OBC)
+                          <div class="ml-1 relative pr-1">
+                            <div class="flex flex-wrap">
+                              <div class="w-full text-center">
+                                <button
+                                  id="popContainer"
+                                  class="bg-green-100 text-green-600 active:bg-green-600 active:text-white p-1 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                  type="button"
+                                >
+                                  <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 512 512"
+                                    height="16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="40"
+                                      d="M196 220h64v172"
+                                    ></path>
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-miterlimit="10"
+                                      stroke-width="40"
+                                      d="M187 396h138"
+                                    ></path>
+                                    <path
+                                      d="M256 160a32 32 0 1132-32 32 32 0 01-32 32z"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerParticularly Vulnerable Tribal Group (PVTG)_caste"
+                        name="caste"
+                        value="Particularly Vulnerable Tribal Group (PVTG)"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerParticularly Vulnerable Tribal Group (PVTG)_caste"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Particularly Vulnerable Tribal Group (PVTG)
+                          <div class="ml-1 relative pr-1">
+                            <div class="flex flex-wrap">
+                              <div class="w-full text-center">
+                                <button
+                                  id="popContainer"
+                                  class="bg-green-100 text-green-600 active:bg-green-600 active:text-white p-1 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                  type="button"
+                                >
+                                  <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 512 512"
+                                    height="16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="40"
+                                      d="M196 220h64v172"
+                                    ></path>
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-miterlimit="10"
+                                      stroke-width="40"
+                                      d="M187 396h138"
+                                    ></path>
+                                    <path
+                                      d="M256 160a32 32 0 1132-32 32 32 0 01-32 32z"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerScheduled Caste (SC)_caste"
+                        name="caste"
+                        value="Scheduled Caste (SC)"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerScheduled Caste (SC)_caste"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Scheduled Caste (SC)
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerScheduled Tribe (ST)_caste"
+                        name="caste"
+                        value="Scheduled Tribe (ST)"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerScheduled Tribe (ST)_caste"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Scheduled Tribe (ST)
+                          <div class="ml-1 relative pr-1">
+                            <div class="flex flex-wrap">
+                              <div class="w-full text-center">
+                                <button
+                                  id="popContainer"
+                                  class="bg-green-100 text-green-600 active:bg-green-600 active:text-white p-1 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                  type="button"
+                                >
+                                  <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    stroke-width="0"
+                                    viewBox="0 0 512 512"
+                                    height="16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="40"
+                                      d="M196 220h64v172"
+                                    ></path>
+                                    <path
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-miterlimit="10"
+                                      stroke-width="40"
+                                      d="M187 396h138"
+                                    ></path>
+                                    <path
+                                      d="M256 160a32 32 0 1132-32 32 32 0 01-32 32z"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Are you
+                  differently abled?
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-2 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerYes_disability"
+                        name="disability"
+                        value="Yes"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerYes_disability"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Yes
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerNo_disability"
+                        name="disability"
+                        value="No"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerNo_disability"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          No
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="flex items-center gap-4 justify-between items-center !justify-start flex-wrap !gap-2"
+                  >
+                    <h2
+                      class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 !whitespace-nowrap flex-none"
+                    >
+                      <span class="text-red-500 text-smundefined">*</span
+                      >Percantage of disability:
+                    </h2>
+                    <div
+                      class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                    >
+                      <select
+                        class="border border-solid border-gray-300 font-semibold rounded-md w-full focus:ring-green-600 focus:outline-0"
+                      >
+                        <option value="">--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                        <option value="61">61</option>
+                        <option value="62">62</option>
+                        <option value="63">63</option>
+                        <option value="64">64</option>
+                        <option value="65">65</option>
+                        <option value="66">66</option>
+                        <option value="67">67</option>
+                        <option value="68">68</option>
+                        <option value="69">69</option>
+                        <option value="70">70</option>
+                        <option value="71">71</option>
+                        <option value="72">72</option>
+                        <option value="73">73</option>
+                        <option value="74">74</option>
+                        <option value="75">75</option>
+                        <option value="76">76</option>
+                        <option value="77">77</option>
+                        <option value="78">78</option>
+                        <option value="79">79</option>
+                        <option value="80">80</option>
+                        <option value="81">81</option>
+                        <option value="82">82</option>
+                        <option value="83">83</option>
+                        <option value="84">84</option>
+                        <option value="85">85</option>
+                        <option value="86">86</option>
+                        <option value="87">87</option>
+                        <option value="88">88</option>
+                        <option value="89">89</option>
+                        <option value="90">90</option>
+                        <option value="91">91</option>
+                        <option value="92">92</option>
+                        <option value="93">93</option>
+                        <option value="94">94</option>
+                        <option value="95">95</option>
+                        <option value="96">96</option>
+                        <option value="97">97</option>
+                        <option value="98">98</option>
+                        <option value="99">99</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                    <!-- <h2
+                                              class="text-lg md:text-xl font-heading font-bold leading-snug mb-3 !mb-0 flex-none">
+                                              years</h2> -->
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Are you a
+                  student?
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-2 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerYes_isStudent"
+                        name="isStudent"
+                        value="Yes"
+                        checked=""
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerYes_isStudent"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Yes
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerNo_isStudent"
+                        name="isStudent"
+                        value="No"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerNo_isStudent"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          No
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>What is
+                  your current employment status?
+                </h2>
+                <div
+                  class="gap-4 grid grid-cols-1 !grid-cols-1 !gap-2 md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerEmployed_employmentStatus"
+                        name="employmentStatus"
+                        value="Employed"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerEmployed_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Employed
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerUnemployed_employmentStatus"
+                        name="employmentStatus"
+                        value="Unemployed"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerUnemployed_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Unemployed
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="block w-full md:inline-block md:w-auto !block">
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerSelf-Employed/ Entrepreneur_employmentStatus"
+                        name="employmentStatus"
+                        value="Self-Employed/ Entrepreneur"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerSelf-Employed/ Entrepreneur_employmentStatus"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Self-Employed/ Entrepreneur
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Do you
+                  belong to BPL category?
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-2 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerYes_isBpl"
+                        name="isBpl"
+                        value="Yes"
+                        checked=""
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerYes_isBpl"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Yes
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerNo_isBpl"
+                        name="isBpl"
+                        value="No"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerNo_isBpl"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          No
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  What is your family's annual income?
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-1 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <input
+                    type="number"
+                    class="border border-solid border-gray-300 font-semibold px-4 py-1.5 rounded focus:outline-0"
+                    placeholder="Enter here"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div>
+                <h2
+                  class="text-lg md:text-xl font-heading font-bold leading-snug mb-3"
+                >
+                  <span class="text-red-500 text-smundefined">*</span>Are you in
+                  any of the following condition - Destitute /Penury /Extreme
+                  Hardship /Distress
+                </h2>
+                <div
+                  class="gap-2 grid grid-cols-1 !grid-cols-2 !justify-start md:grid-cols-2 lg:grid-cols-4 undefined"
+                >
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerYes_isEconomicDistress"
+                        name="isEconomicDistress"
+                        value="Yes"
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerYes_isEconomicDistress"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          Yes
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="block w-full md:inline-block md:w-auto !block text-center"
+                    >
+                      <input
+                        class="sr-only peer"
+                        type="radio"
+                        id="answerNo_isEconomicDistress"
+                        name="isEconomicDistress"
+                        value="No"
+                        checked=""
+                      /><label
+                        class="cursor-pointer font-semibold px-4 py-1.5 rounded w-auto h-full block border-solid border border-gray-300 bg-white hover:bg-gray-100 peer-checked:shadow peer-checked:border-solid peer-checked:border-2 peer-checked:border-green-500 peer-checked:bg-green-50/50 peer-checked:text-green-600 text-gray-600"
+                        for="answerNo_isEconomicDistress"
+                      >
+                        <div class="flex flex-row items-center justify-between">
+                          No
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="mt-3">
+                  <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+              </div> -->
+    <!-- </section> -->
+  </form>
+</div>
+{% endblock content %}

@@ -1,5 +1,4 @@
 {% extends "schemes/base.html" %}
-{% block title %}Home{% endblock title %}
 {% block content %}
 <section class="relative bg-white bg-no-repeat bg-right-top-8 w-full">
     <!-- First Page -->
@@ -185,348 +184,19 @@
           <div class="absolute opacity-70 -bottom-10 -left-10 w-36 h-40 -z-10 bg-repeat bg-shape-one"></div>
           <div class="absolute opacity-70 -top-10 -right-5 lg:-right-10 w-36 h-40 -z-10 bg-repeat categories-bg-2">
           </div>
-          <div class="bg-white grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-10 gap-y-6 p-4 relative">
-            <!-- <div class="absolute -bottom-10 -right-5 lg:-right-10 -z-10 opacity-50"><span
-                style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                  style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                    alt="" aria-hidden="true"
-                    src="./images/agri_and_rural.jpg"
-                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
-                  alt="bg-shape" title="bg-shape"
-                  src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=256&amp;q=75"
-                  decoding="async" data-nimg="intrinsic" class="border-0 "
-                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                  srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=128&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fshapes%2Fblue-bg-shape.png&amp;w=256&amp;q=75 2x"><noscript></noscript></span>
-            </div> -->
-            <div class="group cursor-pointer">
-                <a class="nav-item nav-link" 
-                {% comment %} href="?search-area={{search_input}}&page={{ page_obj.next_page_number }}" {% endcomment %}
-                href="{% url 'tagged' 'agriculture' %}"
-                >
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;border-radius: 50%;">
-                  </span>
-                  <!-- <img
-                    alt="Agriculture,Rural &amp; Environment" title="Agriculture,Rural &amp; Environment"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FAgriculture%2CRural%20%26%20Environment.png&amp;w=96&amp;q=75 2x"><noscript></noscript></span>
-              -->
-              </div>
+          <div class="bg-white grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-6 p-4 relative">
+            {% for category in categories%}
+            <div class="group rounded-lg cursor-pointer shadow-xl hover:shadow-2xl transition-all">
+                <a class="nav-item nav-link " style="padding:1rem"
+                href="{% url 'category' category.slug %}">
+                
+              <p class="text-lg leading-5 font-semibold transition-all m-0 ease-in-out">{{category.name}}</p>
               <p
                 class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
                 10 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Agriculture,Rural &amp;
-                Environment</p>
             </a>
             </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/Banking,Financial Services and Insurance.png"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;border-radius: 50%;"></span>
-                  <!-- <img
-                    alt="Banking,Financial Services and Insurance" title="Banking,Financial Services and Insurance"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBanking%2CFinancial%20Services%20and%20Insurance.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBanking%2CFinancial%20Services%20and%20Insurance.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBanking%2CFinancial%20Services%20and%20Insurance.png&amp;w=96&amp;q=75 2x"><noscript></noscript> -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                39 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Banking,Financial Services and
-                Insurance</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Business &amp; Entrepreneurship" title="Business &amp; Entrepreneurship"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBusiness%20%26%20Entrepreneurship.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBusiness%20%26%20Entrepreneurship.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FBusiness%20%26%20Entrepreneurship.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                18 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Business &amp;
-                Entrepreneurship</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Education &amp; Learning" title="Education &amp; Learning"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FEducation%20%26%20Learning.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FEducation%20%26%20Learning.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FEducation%20%26%20Learning.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                49 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Education &amp; Learning</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Health &amp; Wellness" title="Health &amp; Wellness"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHealth%20%26%20Wellness.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHealth%20%26%20Wellness.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHealth%20%26%20Wellness.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                22 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Health &amp; Wellness</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/Banking,Financial Services and Insurance.png"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Housing &amp; Shelter" title="Housing &amp; Shelter"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHousing%20%26%20Shelter.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHousing%20%26%20Shelter.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FHousing%20%26%20Shelter.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                8 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Housing &amp; Shelter</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Public Safety,Law &amp; Justice" title="Public Safety,Law &amp; Justice"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FPublic%20Safety%2CLaw%20%26%20Justice.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FPublic%20Safety%2CLaw%20%26%20Justice.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FPublic%20Safety%2CLaw%20%26%20Justice.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                2 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Public Safety,Law &amp;
-                Justice</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/agri_and_rural.jpg"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Science, IT &amp; Communications" title="Science, IT &amp; Communications"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FScience%2C%20IT%20%26%20Communications.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FScience%2C%20IT%20%26%20Communications.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FScience%2C%20IT%20%26%20Communications.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                3 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Science, IT &amp;
-                Communications</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true" src="./images/Banking,Financial Services and Insurance.png"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!--                           
-                      <img
-                    alt="Skills &amp; Employment" title="Skills &amp; Employment"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSkills%20%26%20Employment.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSkills%20%26%20Employment.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSkills%20%26%20Employment.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                22 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Skills &amp; Employment</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2746%27%20height=%2746%27/%3e"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!-- <img
-                    alt="Social welfare &amp; Empowerment" title="Social welfare &amp; Empowerment"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSocial%20welfare%20%26%20Empowerment.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSocial%20welfare%20%26%20Empowerment.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSocial%20welfare%20%26%20Empowerment.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                72 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Social welfare &amp;
-                Empowerment</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2746%27%20height=%2746%27/%3e"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!--                           
-                      <img
-                    alt="Sports &amp; Culture" title="Sports &amp; Culture"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSports%20%26%20Culture.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSports%20%26%20Culture.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FSports%20%26%20Culture.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                4 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Sports &amp; Culture</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2746%27%20height=%2746%27/%3e"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-
-                  <!-- <img
-                    alt="Transport &amp; Infrastructure" title="Transport &amp; Infrastructure"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTransport%20%26%20Infrastructure.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTransport%20%26%20Infrastructure.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTransport%20%26%20Infrastructure.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                4 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Transport &amp; Infrastructure
-              </p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2746%27%20height=%2746%27/%3e"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!--                           
-                      <img
-                    alt="Travel &amp; Tourism" title="Travel &amp; Tourism"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTravel%20%26%20Tourism.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTravel%20%26%20Tourism.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FTravel%20%26%20Tourism.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                2 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Travel &amp; Tourism</p>
-            </div>
-            <div class="group cursor-pointer">
-              <div
-                class="transition ease-in-out group-hover:animate-bounceOnce inline-block relative text-sky-500 text-2xl leading-none p-4 z-0 after:absolute after:content[] after:bottom-0 after:left-0 after:w-[110%] after:h-2/5 after:bg-sky-50 after:rounded-50% after:-rotate-12 after:-z-1 ">
-                <span
-                  style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
-                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2746%27%20height=%2746%27/%3e"
-                      style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
-                  <!--                           
-                      <img
-                    alt="Utility &amp; Sanitation" title="Utility &amp; Sanitation"
-                    src="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FUtility%20%26%20Sanitation.png&amp;w=96&amp;q=75"
-                    decoding="async" data-nimg="intrinsic" class="border-0 w-10 h-10 block"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    srcset="/_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FUtility%20%26%20Sanitation.png&amp;w=48&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fcdn.myscheme.in%2Fimages%2Fcategories%2FUtility%20%26%20Sanitation.png&amp;w=96&amp;q=75 2x"><noscript></noscript>
-                   -->
-                </span>
-              </div>
-              <p
-                class="text-base text-green-600 leading-none group-hover:text-indigo-600 pt-3 pb-1.5 m-0 transition-all ease-in-out font-mono">
-                15 Schemes</p>
-              <p class="text-lg leading-5 font-normal transition-all m-0 ease-in-out">Utility &amp; Sanitation</p>
-            </div>
+           {% endfor%}
           </div>
         </div>
       </div>
@@ -557,19 +227,6 @@
                         <img
                           style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                           alt="" aria-hidden="true" src="https://cdn.myscheme.in/images/icons/check.svg" /></span>
-                      <!-- <img
-                        alt="[object Object]" title="[object Object]"
-                        src=""
-                        decoding="async" data-nimg="intrinsic" class="border-0 "
-                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover" />
-                       -->
-                      <!-- <noscript><img
-                          srcSet="https://cdn.myscheme.in/images/icons/check.svg 1x, https://cdn.myscheme.in/images/icons/check.svg 2x"
-                          alt="[object Object]" title="[object Object]"
-                          src="https://cdn.myscheme.in/images/icons/check.svg" decoding="async"
-                          data-nimg="intrinsic"
-                          style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"
-                          class="border-0 " loading="lazy" /></noscript> -->
                     </span></div>
                   <h3 class="text-xl font-semibold text-green-600">Enter Details</h3><span
                     class="text-center"><span>Start by entering your <strong>basic details!</strong></span></span>
@@ -587,30 +244,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg></div>
             <div class=" flex-1 ">
-              <div class="relative bg-white flex z-10 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:animate-bounceOnce p-8
-  false
-  ">
+              <div class="relative bg-white flex z-10 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:animate-bounceOnce p-8 false">
                 <div class="relative z-20 bg-white w-full h-full rounded-lg flex flex-col items-center gap-3 ">
                   <div class="h-16"><span
                       style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                         style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
                           style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                           alt="" aria-hidden="true" src="https://cdn.myscheme.in/images/icons/search.svg" /></span>
-
-                      <!-- <img
-                        alt="[object Object]" title="[object Object]"
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                        decoding="async" data-nimg="intrinsic" class="border-0 "
-                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover" />
-                        
-                        <noscript><img
-                          srcSet="https://cdn.myscheme.in/images/icons/search.svg 1x, https://cdn.myscheme.in/images/icons/search.svg 2x"
-                          alt="[object Object]" title="[object Object]"
-                          src="https://cdn.myscheme.in/images/icons/search.svg" decoding="async"
-                          data-nimg="intrinsic"
-                          style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"
-                          class="border-0 " loading="lazy" /></noscript>
-                         -->
                     </span></div>
                   <h3 class="text-xl font-semibold text-green-600">Search</h3><span class="text-center"><span>Our
                       search engine will <strong>find the relevant schemes</strong>!</span></span>

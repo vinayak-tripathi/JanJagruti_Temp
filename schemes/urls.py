@@ -13,8 +13,8 @@ from .views import (
 urlpatterns = [
     path('', home, name='home'),
     path('schemes/', SchemeListView.as_view(), name='schemes'),
+    path('about/', SchemeListView.as_view(), name='about'),
     path('schemes/<slug:slug>/',SchemeDetailView.as_view(), name='schemedetail'),
-    
     path('category/<slug:slug>',CategoryView.as_view(),name='category'),
     path('tagged/<slug:slug>',TaggedView.as_view(),name='tagged'),
     path('user/',userForm,name="userForm")
