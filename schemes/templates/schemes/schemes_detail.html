@@ -1,0 +1,168 @@
+{% extends "schemes/base.html" %} {% block content %}
+<section class="section-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <article class="row mb-5 card p-5" id="title">
+          <div class="col-md-12">
+            <h3 class="h5 card-title">{{ object.name}}</h3>
+            <ul class="list-inline post-meta mb-3">
+              <li class="list-inline-item">
+                <i class="ti-user mr-2"></i><a href="#">{{object.nodalMinistry}}</a>
+              </li>
+              <li class="list-inline-item">Date : {{ object.uploadDate }}</li>
+              <!-- <li class="list-inline-item">Categories : <a href="#!" class="ml-1">Photography </a>
+                      </li> -->
+              <li class="list-inline-item">
+                Tags : {% for tag in object.tags.all %}
+
+                <a href="{% url 'tagged' tag.slug %}" class="ml-1">{{tag}} </a>
+                {%endfor%}
+              </li>
+            </ul>
+            <div class="row" style="justify-content: space-between">
+              <a href="post-elements.html" class="btn btn-outline-primary">Checkout</a>
+
+              <div class="row">
+                <a href="post-elements.html" class="btn btn-outline-primary mr-1"><i class="ti-share"> </i></a>
+                <a href="post-elements.html" class="btn btn-outline-primary"><i class="ti-link"> </i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div id="details">
+          <h4>Details</h4>
+          <article class="row mb-5 card p-5">
+            <div class="col-md-12">
+              <p>{{ object.details|safe }}</p>
+            </div>
+          </article>
+        </div>
+        {% comment %} benefit {% endcomment %}
+        <div>
+          <h4>Benifits</h4>
+          <article class="row mb-5 card p-5">
+            <div class="col-md-12">
+              <p>
+                For death: Natural causes – ₹20,000; and Accident – ₹50,000. For
+                permanent disability (loss of two eyes or two limbs) – ₹50,000.
+                For partial disability (loss of one eye or one limb) – ₹25,000.
+                Free add-on benefit: Scholarship of ₹300 per quarter for
+                children of Khadi Karigar, studying in class 9th to 12th
+                standard, subject to a maximum of 2 children per family
+              </p>
+            </div>
+          </article>
+        </div>
+        {% comment %} Eligibility {% endcomment %}
+        <div id="eligibility">
+          <h4>Eligibility</h4>
+          <article class="row mb-5 card p-5">
+            <div class="col-md-12">
+              <p>{{object.eligibility|safe}}</p>
+            </div>
+          </article>
+        </div>
+        <div id="sources">
+          <h4>Documents Required</h4>
+          <article class="row mb-5 card p-5">
+            <div class="col-md-12">
+              <p>
+                A group insurance scheme by MoMSME for khadi artisans (spinners
+                and weavers). The scheme provides insurance cover against normal
+                death, accidental death, permanent or partial disability of the
+                insured artisan. Scholarships are provided to the insurer’s
+                children studying in class 9th to 12th. The artisan must be
+                member of the approved vocation / occupation groups. This scheme
+                was formulated by Khadi and Village Industries Commission (KVIC)
+                in association with the Life Insurance Corporation of India
+                (LIC).
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <aside class="col-lg-4">
+        <!-- Search -->
+
+        <!-- categories -->
+        <div class="widget">
+          <h5 class="widget-title"><span>List</span></h5>
+          <ul class="list-unstyled widget-list">
+            {% for key,value in fields.items %}
+            <li>
+              <a href="#{{key}}" class="d-flex">{{value}} </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- tags -->
+        <!-- <div class="widget">
+                <h5 class="widget-title"><span>Tags</span></h5>
+                <ul class="list-inline widget-list-inline">
+                   <li class="list-inline-item"><a href="#!">Booth</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">City</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">Image</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">New</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">Photo</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">Seasone</a>
+                   </li>
+                   <li class="list-inline-item"><a href="#!">Video</a>
+                   </li>
+                </ul>
+             </div> -->
+        <!-- latest post -->
+        <div class="widget">
+          <h5 class="widget-title"><span>Latest Article</span></h5>
+          <!-- post-item -->
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-elements.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-6.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-elements.html">Elements That You Can Use To Create A New Post On This
+                    Template.</a>
+                </h5>
+                <small>March 15, 2020</small>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-details-1.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-1.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-details-1.html">Cheerful Loving Couple Bakers Drinking Coffee</a>
+                </h5>
+                <small>March 14, 2020</small>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-details-2.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-2.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-details-2.html">Cheerful Loving Couple Bakers Drinking Coffee</a>
+                </h5>
+                <small>March 14, 2020</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock content %}
