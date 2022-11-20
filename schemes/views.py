@@ -125,3 +125,10 @@ def contact(request):
 
 def userForm(request):
     return render(request, 'schemes/customForm.html')
+
+def ministry(request):
+    arr = [1, 2, 3, 1, 5]
+    context ={
+        'ministries' :arr
+    }
+    return render(request,'schemes/ministry.html',context)
