@@ -111,6 +111,22 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'schemes' %}">Schemes</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Subsidy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Tender</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Announcements</a>
+              </li>
+              {% comment %}
               <li class="nav-item dropdown">
                 <a
                   class="nav-link"
@@ -140,6 +156,7 @@
                   >
                 </div>
               </li>
+              {% endcomment %}
             </ul>
 
             <select class="m-2 border-0" id="select-language">
@@ -211,7 +228,7 @@
           <div class="col-lg-2 col-md-3 col-6 mb-4">
             <h6 class="mb-4">Quick Links</h6>
             <ul class="list-unstyled footer-list">
-              <li><a href="about.html">About</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
               <li><a href="{% url 'contact'%}">Contact</a></li>
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
               <li><a href="terms-conditions.html">Terms Conditions</a></li>

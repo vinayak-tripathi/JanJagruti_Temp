@@ -118,10 +118,10 @@
         <h6> We have found {{schemes|length}} schemes </h6>
         <hr>
         {% for scheme in schemes %}
-        <article class="row mb-5">
+        <article class="row  border-bottom ">
   
    
-          <div class="col-md-12">
+          <div class="col-md-12 mb-3 mt-3">
             <h3 class="h5">
               <a class="post-title" href="{% url "schemedetail" scheme.slug%}"
                 >{{scheme.name}}</a
@@ -154,6 +154,7 @@
             >
           </div>
         </article>
+        
         {% endfor %}
         {% if schemes|length < 1 %}
           <div id="mainC " class='flexing col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0'>
