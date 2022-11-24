@@ -148,18 +148,17 @@
 }
 .article_main {
   position: relative;
-  margin-bottom: 50px;
 }
 .article_img {
   position: absolute;
-  top: 0;
-  left: 50%;
+  top: 30%;
+  right: 5px;
   transform: translate(-50%, -50%);
 }
 .inner_element {
   height: 50px;
   width: 50px;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: rgba(62, 62, 62, 0.404);
 }
 .flex_style {
