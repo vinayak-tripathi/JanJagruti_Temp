@@ -10,7 +10,7 @@ from .views import (
     TaggedView,
     userForm,
     contact,
-    ministry
+    ministry,
 )
 # from . import views
 urlpatterns = [
@@ -23,6 +23,7 @@ urlpatterns = [
     path('ministry/',ministry,name='ministry'),
     path('tagged/<slug:slug>',TaggedView.as_view(),name='tagged'),
     path('user/',userForm,name="userForm"),
-    path('updatescheme/<slug:slug>',SchemeUpdate.as_view(),name="updatescheme")
+    path('updatescheme/<slug:slug>',SchemeUpdate.as_view(),name="updatescheme"),
+    # path('news/<slug:slug>/',News.as_view(),name='news')
 
 ]

@@ -25,7 +25,9 @@
           <!-- post-item -->
           <ul class="list-unstyled widget-list">
             <li class="media widget-post align-items-center">
-              <a href="post-elements.html">
+              <a 
+              {% comment %} href="{% url 'news' new1 %}" {% endcomment %}
+              >
                 <img loading="lazy" class="mr-3" src="{% static 'images/post/post-6.jpg'%}">
               </a>
               <div class="media-body">
@@ -63,7 +65,7 @@
     </div>
 
     <div class="row" style="justify-content: space-between;">
-      <div class="col-lg-6 flex_style">
+      <div class="col-lg-6 flex_style ">
         <h6 class="section__title mb-30 h4">
           Find schemes based
           on State
@@ -73,7 +75,7 @@
           alias
           cum vel numquam?</p> -->
         <div class="container">
-          <div class="grid">
+          <div class="grid mb-3">
             <article class="border border-default article_main">
               <div class="article_img">
                 <div class="inner_element">
@@ -144,7 +146,7 @@
           alias
           cum vel numquam?</p> -->
         <div class="container">
-          <div class="grid">
+          <div class="grid mb-3">
             <article class="border border-default article_main">
               <div class="article_img">
                 <div class="inner_element">

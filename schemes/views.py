@@ -132,3 +132,4 @@ def ministry(request):
         'ministries' :arr
     }
     return render(request,'schemes/ministry.html',context)
+# create news function

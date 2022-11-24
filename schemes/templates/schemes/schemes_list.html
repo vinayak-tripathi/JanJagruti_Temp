@@ -158,17 +158,20 @@
         {% endfor %}
         {% if schemes|length < 1 %}
           <div id="mainC " class='flexing col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0'>
-            <div class="message">
-              <h1>404</h1>
+            <div class="container">
+              <div class= 'row' style='justify-content: center'>
+
+              <div class="not_found ">
+                <i class='ti-face-sad'></i>
+              
+              </div> <h1>404</h1>
+            </div>
               <h3>the page you seek does not exist</h3>
             </div>
     
           </div>
      
-        <div class="not_found ">
-              <i class='ti-face-sad'></i>
-            
-        </div>
+     
         
         {% endif%}
        </div>
