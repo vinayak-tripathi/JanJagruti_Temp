@@ -5,6 +5,7 @@ from taggit.managers import TaggableManager
 # from autoslug import AutoSlugField
 from taggit.managers import TaggableManager
 from taggit.models import TagBase, GenericTaggedItemBase
+from PIL import Image
 # Create your models here.
 class Tags(TagBase):
 
@@ -70,8 +71,18 @@ class Schemes(models.Model):
     references = models.TextField()
     uploadDate = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(null=False, unique=True)
+    image = models.ImageField(default='default.jpg',upload_to='schemes')
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
         return reverse("schemedetail", kwargs={"slug": self.slug})
+    def save(self, *args, **kwargs):
+        super(Schemes, self).save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)

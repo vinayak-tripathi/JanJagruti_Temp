@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.views.generic import (
     ListView,
     DetailView,
+        UpdateView,
 )
 
 from .models import Schemes,Tags, Category
@@ -13,8 +14,10 @@ from django import forms
 # from taggit.models import Tags,Category,SubCategory
 
 def home(request):
+    category_tags = Schemes.category.most_common()
+    print(category_tags[0].num_times)
     context = {
-        'categories': Category.objects.all()
+        'categories': category_tags
     }
     return render(request, 'schemes/home.html',context)
 
@@ -30,6 +33,11 @@ class SchemeListView(ListView):
         
         search_input = self.request.GET.get('search-area') or ''
         context['title'] = 'Search Schemes'
+        category_tags = Schemes.category.most_common()
+        tags = Schemes.tags.most_common()[:7]
+        # print(tags)
+        context['tags'] = tags
+        context['category'] = category_tags
         context['search_input']= search_input
         # print(context)
         return context
@@ -42,7 +50,7 @@ class SchemeDetailView(DetailView):
     model = Schemes
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(context['object'],'Hello')
+        
         # context["title"] = context['schemes'].objects
         fields = {
             'title' : 'Title',
@@ -50,10 +58,11 @@ class SchemeDetailView(DetailView):
              'eligibility': 'Eligibility',
              'sources' : 'References',
              'validity' : 'Validty'
-
         }
         # ['title','name','brief','eligibility','references','slug','tags','details']
         context['fields']=fields
+        
+
         return context
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -116,5 +125,16 @@ class TaggedView(ListView):
 def about(request):
     return render(request,"schemes/about.html")
 
+def contact(request):
+    return render(request,"schemes/contact.html")
+
 def userForm(request):
-    return render(request, 'schemes/secondForm.html')
+    return render(request, 'schemes/customForm.html')
+
+def ministry(request):
+    arr = [1, 2, 3, 1, 5]
+    context ={
+        'ministries' :arr
+    }
+    return render(request,'schemes/ministry.html',context)
+# create news function

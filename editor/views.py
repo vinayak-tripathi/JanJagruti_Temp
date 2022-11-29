@@ -42,7 +42,7 @@ class SchemeUpdateListView(LoginRequiredMixin,ListView):
         context = super().get_context_data(**kwargs)
         
         search_input = self.request.GET.get('search-area') or ''
-        context['title'] = 'Search Schemes'
+        context['title'] = 'Update Schemes'
         context['search_input']= search_input
         # print(context)
         return context
@@ -56,15 +56,42 @@ class DateInput(forms.DateInput):
 
 class SchemeUpdate(LoginRequiredMixin,UpdateView):
     model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
+    template_name = 'editor/schemes_form.html'
+    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate','image']
+    success_url = reverse_lazy('updatescheme')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = "Edit "+self.object.title
+        return context
+    def get_form(self,form_class=None):
+        form = super(SchemeUpdate,self).get_form(form_class)
+        # form.fields['category'].widget = forms.TextInput(attrs={"data-role":"tagsinput"})
+        form.fields['openDate'].widget = DateInput()
+        form.fields['closeDate'].widget = DateInput()
+        return form
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(SchemeUpdate,self).form_valid(form)
 
 class SchemeAdd(LoginRequiredMixin,CreateView):
     model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
+    template_name = 'editor/schemes_form.html'
+    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate','image']
+    # category = Tags.objects.all()
     # success_url = reverse_lazy('tasks')
-    success_url = reverse_lazy('schemes')
+    success_url = reverse_lazy('editor')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = Category.objects.all()
+        context['title']='Add Scheme'
+        # search_input = self.request.GET.get('search-area') or ''
+        # context['title'] = 'Update Schemes'
+        # context['search_input']= search_input
+        # # print(context)
+        return context
     def get_form(self,form_class=None):
         form = super(SchemeAdd,self).get_form(form_class)
+        form.fields['category'].widget = forms.TextInput(attrs={"data-role":"tagsinput"})
         form.fields['openDate'].widget = DateInput()
         form.fields['closeDate'].widget = DateInput()
         return form
