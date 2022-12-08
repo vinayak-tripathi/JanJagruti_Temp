@@ -4,9 +4,7 @@ from django.db.models import Q
 from django.views.generic import (
     ListView,
     DetailView,
-    CreateView,
-    UpdateView,
-    DeleteView
+        UpdateView,
 )
 
 from .models import Schemes,Tags, Category
@@ -16,10 +14,12 @@ from django import forms
 # from taggit.models import Tags,Category,SubCategory
 
 def home(request):
-    # context = {
-    #     'posts': Schemes.objects.all()
-    # }
-    return render(request, 'schemes/home.html')
+    category_tags = Schemes.category.most_common()
+    print(category_tags[0].num_times)
+    context = {
+        'categories': category_tags
+    }
+    return render(request, 'schemes/home.html',context)
 
 class SchemeListView(ListView):
     model = Schemes
@@ -33,38 +33,46 @@ class SchemeListView(ListView):
         
         search_input = self.request.GET.get('search-area') or ''
         context['title'] = 'Search Schemes'
+        category_tags = Schemes.category.most_common()
+        tags = Schemes.tags.most_common()[:7]
+        # print(tags)
+        context['tags'] = tags
+        context['category'] = category_tags
         context['search_input']= search_input
         # print(context)
         return context
     def get_queryset(self):
         # user = get_object_or_404(User, username=self.kwargs.get('username'))
         search_input = self.request.GET.get('search-area') or ''
-        return Schemes.objects.filter(details__icontains=search_input).order_by('-uploadDate')
+        return Schemes.objects.filter(Q(details__icontains=search_input)|Q(eligibility__icontains=search_input)|Q(nodalMinistry__icontains=search_input)).order_by('-uploadDate')
 
 class SchemeDetailView(DetailView):
     model = Schemes
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # context["title"] = context['schemes'].objects
+        fields = {
+            'title' : 'Title',
+            'details' : 'Details',
+             'eligibility': 'Eligibility',
+             'sources' : 'References',
+             'validity' : 'Validty'
+        }
+        # ['title','name','brief','eligibility','references','slug','tags','details']
+        context['fields']=fields
+        
+
+        return context
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
     #     print(context)
     #     context["title"] = context['schemes'].objects
     #     print(context['schemes'])
     #     return context
-class DateInput(forms.DateInput):
-    input_type = 'date'
 
-class SchemeAdd(CreateView):
-    model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
-    # success_url = reverse_lazy('tasks')
-    success_url = reverse_lazy('schemes')
-    def get_form(self,form_class=None):
-        form = super(SchemeAdd,self).get_form(form_class)
-        form.fields['openDate'].widget = DateInput()
-        form.fields['closeDate'].widget = DateInput()
-        return form
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(SchemeAdd,self).form_valid(form)
+
+
 
 # class CategoryListView(ListView,slug):
 #     tag = get_object_or_404(Tags,slug=slug)
@@ -114,7 +122,19 @@ class TaggedView(ListView):
         print(posts)
         return posts
 
-class SchemeUpdate(UpdateView):
-    model = Schemes
-    fields = ['title','name','brief','eligibility','references','slug','tags','details','category','subcategory','openDate','closeDate']
+def about(request):
+    return render(request,"schemes/about.html")
 
+def contact(request):
+    return render(request,"schemes/contact.html")
+
+def userForm(request):
+    return render(request, 'schemes/customForm.html')
+
+def ministry(request):
+    arr = [1, 2, 3, 1, 5]
+    context ={
+        'ministries' :arr
+    }
+    return render(request,'schemes/ministry.html',context)
+# create news function

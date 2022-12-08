@@ -1,0 +1,41 @@
+{% extends "schemes/base.html" %} {% block content %}
+
+<section class="section-xs">
+  <div class="container">
+    <h3 class="h3 mb-30">
+      Find schemes based on categories
+      <!-- <span>Powered by Technology</span> -->
+    </h3>
+    <div class="widget">
+      <h5 class="widget-title"><span>Search</span></h5>
+      <form action="/logbook-hugo/search" class="widget-search">
+        <input
+          id="search-query"
+          name="s"
+          type="search"
+          placeholder="Type &amp; Hit Enter..."
+        />
+        <button type="submit"><i class="ti-search"></i></button>
+      </form>
+    </div>
+    <div class="grid">
+      {% for category in ministries%}
+      <article class="border border-default article_main">
+        <a>
+          <div class="article_img">
+            <div class="inner_element"></div>
+          </div>
+          <div class="text">
+            <p>10 Schemes</p>
+
+            <h6>']</h6>
+            <!-- <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Here's why</a> -->
+          </div>
+        </a>
+      </article>
+      {% endfor%}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

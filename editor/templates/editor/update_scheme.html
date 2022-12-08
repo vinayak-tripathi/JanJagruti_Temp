@@ -1,0 +1,264 @@
+{% extends "schemes/base.html" %} {% block content %}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <aside class="col-lg-4 order-2 order-lg-1">
+        <!-- Search -->
+        <div class="widget">
+          <h5 class="widget-title"><span>Search</span></h5>
+          <form class="widget-search">
+            <input
+              id="search-area"
+              name="search-area"
+              type="search"
+              placeholder="Type &amp; Hit Enter..."
+              value="{{search_input}}"
+            />
+            <button type="submit"><i class="ti-search"></i></button>
+          </form>
+        </div>
+        <!-- categories -->
+        <div class="widget">
+          <h5 class="widget-title"><span>Categories</span></h5>
+          <ul class="list-unstyled widget-list">
+            {% for cat in category%}
+
+            <li>
+              <a href="#" class="d-flex"
+                >{{cat}} <small class="ml-auto"></small></a
+              >
+            </li>
+            {% endfor %}
+            
+          </ul>
+        </div>
+        <!-- tags -->
+        <div class="widget">
+          <h5 class="widget-title"><span>Tags</span></h5>
+          <ul class="list-inline widget-list-inline">
+            {% for tag in tags%}
+            <li class="list-inline-item"><a href="#!">{{tag}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- latest post -->
+        <div class="widget">
+          <h5 class="widget-title"><span>Latest Article</span></h5>
+          <!-- post-item -->
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-elements.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-6.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-elements.html"
+                    >Elements That You Can Use To Create A New Post On This
+                    Template.</a
+                  >
+                </h5>
+                <small>March 15, 2020</small>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-details-1.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-1.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-details-1.html"
+                    >Cheerful Loving Couple Bakers Drinking Coffee</a
+                  >
+                </h5>
+                <small>March 14, 2020</small>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-unstyled widget-list">
+            <li class="media widget-post align-items-center">
+              <a href="post-details-2.html">
+                <img loading="lazy" class="mr-3" src="images/post/post-2.jpg" />
+              </a>
+              <div class="media-body">
+                <h5 class="h6 mb-0">
+                  <a href="post-details-2.html"
+                    >Cheerful Loving Couple Bakers Drinking Coffee</a
+                  >
+                </h5>
+                <small>March 14, 2020</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0 ">
+      <div>
+
+        <h6> We have found <strong style="color:#ce8460;font-size:17px">{{page_obj.paginator.count}}</strong> schemes </h6>
+        <hr>
+        {% for scheme in schemes %}
+        <article class="row  border-bottom ">
+  
+   
+          <div class="col-md-12 mb-3 mt-3">
+            <h4>
+              <a class="post-title" href="{% url "updatescheme" scheme.slug%}"
+                >{{scheme.name}}</a
+              >
+            </h4>
+            <ul class="list-inline post-meta mb-2">
+              <!-- <li class="list-inline-item"><i class="ti-user mr-2"></i><a href="author.html">John Doe</a>
+                    </li> -->
+              
+              {% if scheme.nodalMinistry%}      <li class="list-inline-item"><strong style="font-size: initial">{{scheme.nodalMinistry}}</strong></li> {%endif%}
+              {% comment %}
+              <li class="list-inline-item">
+                Categories : <a href="#!" class="ml-1">Photography </a>
+              </li>
+              {% endcomment %}<br>
+              <li class="list-inline-item">
+                Tags : {% for tag in scheme.tags.all %}
+                <a href="{% url 'tagged' tag.slug %}" class="badge bg-primary bg-lighten-md text-light" style="font-size:inherit">{{ tag }}</a>
+
+                {% endfor %} {% comment %}
+                <a href="#!" class="ml-1">Photo </a> ,<a href="#!" class="ml-1"
+                  >Image
+                </a>
+                {% endcomment %}
+              </li>
+            </ul>
+            <p>{{scheme.brief}}</p>
+            <a href="{% url "updatescheme" scheme.slug%}" class="btn btn-outline-primary"
+              >Update
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-blue-900 cursor-pointer mr-2 opacity-50 cursor-not-allowed" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+              </svg>
+              </a
+            >
+          </div>
+        </article>
+        
+        {% endfor %}
+        {% if schemes|length < 1 %}
+          <div id="mainC " class='flexing col-lg-8 order-1 order-lg-2 mb-5 mb-lg-0'>
+            <div class="container">
+              <div class= 'row' style='justify-content: center'>
+
+              <div class="not_found ">
+                <i class='ti-face-sad'></i>
+              
+              </div> <h1>404</h1>
+            </div>
+              <h3>the page you seek does not exist</h3>
+            </div>
+    
+          </div>
+        {% endif%}
+       </div>
+       <style>
+        
+.pagination{
+  padding: 30px 0;
+}
+
+.pagination ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination a{
+  display: inline-block;
+  padding: 10px 18px;
+  color: #222;
+}
+
+/* ONE */
+.p1 a.is-active{
+  background-color: #ce8460;
+  border-radius: 100%;
+  color: #fff;
+  opacity:1;
+}
+
+       </style>
+       
+
+       <div class="">
+        <div class="pagination p1">
+          <ul>
+        {% if is_paginated %}
+          {% if search_input == '' %}
+            {% if page_obj.has_previous %}
+              <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary">
+                <li><i class="ti-angle-left"></i></li>
+              </a>
+              {% else %}
+              <a href="" class="btn btn-outline-primary disabled">
+              <li><i class="ti-angle-left"></i></li></a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+              {% if page_obj.number == num %}
+              <a href="?page={{ num }}" class="btn btn-outline-primary" style="background-color:#ce8460;color:#fff">
+                <li>{{page_obj.number}}</li>
+              </a>
+              {% elif num > page_obj.number|add:'-5' and num < page_obj.number|add:'5' %}
+              <a href="?page={{ num }}" class="btn btn-outline-primary">{{num}}
+              </a>
+              {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">
+              <li><i class="ti-angle-right"></i></li>
+            </a>
+            {% else %}
+              <a href="" class="btn btn-outline-primary disabled">
+              <li><i class="ti-angle-right"></i></li>
+            </a>
+            {% endif %}
+          {% else %}
+          {% if page_obj.has_previous %}
+              <a href="?search-area={{search_input}}&page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary">
+                <li><i class="ti-angle-left"></i></li>
+              </a>
+              {% else %}
+              <a href="" class="btn btn-outline-primary disabled">
+              <li><i class="ti-angle-left"></i></li></a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+              {% if page_obj.number == num %}
+              <a href="?search-area={{search_input}}&page={{ num }}" class="btn btn-outline-primary" style="background-color:#ce8460;color:#fff">
+                <li>{{page_obj.number}}</li>
+              </a>
+              {% elif num > page_obj.number|add:'-5' and num < page_obj.number|add:'5' %}
+              <a href="?search-area={{search_input}}&page={{ num }}" class="btn btn-outline-primary">{{num}}
+              </a>
+              {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a href="?search-area={{search_input}}&page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">
+              <li><i class="ti-angle-right"></i></li>
+            </a>
+            {% else %}
+              <a href="" class="btn btn-outline-primary disabled">
+              <li><i class="ti-angle-right"></i></li>
+            </a>
+            {% endif %}
+            {% endif %}
+        {% endif %}
+        </ul>
+      </div>
+      
+    </div>
+    </div>
+    </div>
+  
+  </div>
+
+
+</section>
+
+{% endblock content %}
