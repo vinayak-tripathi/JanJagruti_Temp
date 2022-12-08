@@ -152,7 +152,19 @@
 }
 .article_img {
   position: absolute;
-  top: 0;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+.ministry_img{
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+}
+.category_img{
+  position: absolute;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -160,7 +172,7 @@
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  background-color: rgba(62, 62, 62, 0.404);
+  /* background-color: #ce8460; */
 }
 .flex_style {
   display: flex;
@@ -275,5 +287,7 @@ textarea:focus {
   padding-bottom: 100%;
 }
 
-
+/* .bg-linear{
+  background-image: linear-gradient(.25turn, #ce8460 , 40%, #fff);
+} */
 

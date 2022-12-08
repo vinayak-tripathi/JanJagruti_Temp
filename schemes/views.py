@@ -18,7 +18,7 @@ def home(request):
     category_tags = Schemes.category.most_common()
     print(category_tags[0].num_times)
     context = {
-        'categories': category_tags
+        'categories': category_tags,
     }
     return render(request, 'schemes/home.html',context)
 

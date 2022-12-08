@@ -104,10 +104,23 @@
             <option id="en" value="about/" selected>En</option>
             <option id="fr" value="fr/about/">Hi</option>
           </select>
+          <a class="nav-link">
           <button id="" class="search-btn">
             <i class="ti-user"></i>
           </button>
+        </a>
+          {% if request.user.is_authenticated %}
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="index-full.html">Homepage Full Width</a>
+            <a class="dropdown-item" href="index-full-left.html">Homepage Full With Left Sidebar</a>
+            <a class="dropdown-item" href="index-full-right.html">Homepage Full With Right Sidebar</a>
+            <a class="dropdown-item" href="index-list.html">Homepage List Style</a>
+            <a class="dropdown-item" href="index-list-left.html">Homepage List With Left Sidebar</a>
+            <a class="dropdown-item" href="index-list-right.html">Homepage List With Right Sidebar</a>
+          </div>
 
+        
+          {% endif %}
           <!-- search -->
           <!-- <div class="search px-4">
               <button id="searchOpen" class="search-btn">
